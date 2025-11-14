@@ -1,3 +1,6 @@
+Integrantes
+-Jhon David Santamaria Cossio
+-Miguel Martinez Gallego
 # LinearRegression-OOP
 # Implementación de un modelo de Regresión Lineal Múltiple en Java
 
