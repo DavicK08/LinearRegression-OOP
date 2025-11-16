@@ -9,7 +9,7 @@ No usa librerías externas: todo está implementado manualmente (lectura de CSV,
 
 ---
 
-## 📁 Estructura del proyecto
+##  Estructura del proyecto
 
 ```
 Regresion-Lineal-Java/
@@ -29,34 +29,34 @@ Regresion-Lineal-Java/
 
 ---
 
-## 🚀 ¿Qué hace el proyecto?
+##  ¿Qué hace el proyecto?
 
-### ✔ 1. Lee los CSV (train y test)
+### 1. Lee los CSV (train y test)
 El archivo CSV debe tener:
 - Varias columnas numéricas
 - La **última columna es la variable objetivo y**
 
-### ✔ 2. Escala los datos
+### 2. Escala los datos
 Se aplica estandarización:
 
 ```
 z = (x - mean) / std
 ```
 
-### ✔ 3. Entrena un modelo usando **gradiente descendente**
+### 3. Entrena un modelo usando **gradiente descendente**
 La clase `LinearRegression` calcula:
 - Pesos (`weights`)
 - Bias (`bias`)
 - Actualización de gradientes durante `epochs` épocas
 
-### ✔ 4. Predice valores nuevos
+### 4. Predice valores nuevos
 Usando la fórmula:
 
 ```
 y_hat = bias + Σ (wᵢ * xᵢ)
 ```
 
-### ✔ 5. Calcula el MSE
+### 5. Calcula el MSE
 Error cuadrático medio:
 
 ```
@@ -65,7 +65,7 @@ MSE = (1/n) Σ (y_pred - y_real)²
 
 ---
 
-## ▶️ ¿Cómo ejecutar?
+## ¿Cómo ejecutar?
 
 Dentro de la carpeta raíz:
 
@@ -82,7 +82,7 @@ Regresion-Lineal-Java/
 
 ---
 
-## 📊 Resultado esperado
+## Resultado esperado
 
 El programa imprime:
 - Todas las predicciones del modelo
@@ -102,7 +102,7 @@ MSE = 4.82
 
 ---
 
-## 🧠 ¿Qué se evaluó?
+## ¿Qué se evaluó?
 
 - Lectura de CSV desde cero  
 - Implementación del gradiente descendente  
@@ -113,7 +113,7 @@ MSE = 4.82
 
 ---
 
-## ✔ Conclusión
+## Conclusión
 
-Este proyecto demuestra cómo implementar un modelo de regresión lineal múltiple desde cero, usando únicamente Java y aplicando conceptos de POO, matemáticas y procesamiento de datos.
+Este proyecto demuestra cómo implementar un modelo de regresión lineal múltiple desde cero, usando únicamente Java y aplicando conceptos de POO, matemáticas y procesamiento de datos. En lo personal, creemos que fue el mejor proyecto de la materia en este semestre, se nos hizo muy útil e interesante. Por último, agradecerle al profesor por este semestre, y disculparnos por no haber podido realizar el vídeo.
 
