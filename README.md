@@ -1,107 +1,119 @@
-Integrantes
--Jhon David Santamaria Cossio
--Miguel Martinez Gallego
-# LinearRegression-OOP
-# Implementación de un modelo de Regresión Lineal Múltiple en Java
+# Integrantes.
+Jhon David Santamaria Cossio.
+Miguel Martinez Gallego.
 
-## Descripción del proyecto
-Este repositorio contiene la implementación completa de un modelo de regresión lineal múltiple en Java, desarrollado para la Práctica 3 del curso Programming Languages and Paradigms.  
-El proyecto se construyó sin usar librerías externas, siguiendo los principios de programación orientada a objetos.
+# Práctica 3 – Regresión Lineal en Java (POO)
 
-El programa incluye:
-- Carga de datos desde archivos CSV.
-- Escalamiento de datos (normalización por media y desviación estándar).
-- Entrenamiento mediante descenso del gradiente.
-- Predicción de valores.
-- Cálculo del error usando MSE.
-- Pruebas con datasets de entrenamiento y prueba.
+Este proyecto implementa un modelo de **regresión lineal múltiple** programado completamente desde cero en Java.  
+No usa librerías externas: todo está implementado manualmente (lectura de CSV, escalado, gradiente descendente, predicciones, MSE, etc).
 
 ---
 
-## Estructura del repositorio
+## 📁 Estructura del proyecto
 
-src/
-└── LinearRegression.java
-
-data/
-├── train_X.csv
-├── train_y.csv
-├── test_X.csv
-└── test_y.csv
-
----
-
-## Instrucciones para ejecutar
-
-1. Clonar o descargar el repositorio.
-2. Colocar los archivos CSV dentro de la carpeta `data/`.
-3. Compilar el programa:
-
-javac src/LinearRegression.java
-
-4. Ejecutar:
-
+```
+Regresion-Lineal-Java/
+│
+├── README.md
+│
+├── data/
+│   ├── student_exam_scores_train.csv
+│   ├── student_exam_scores_test.csv
+│   ├── Ice_cream_selling_data_train.csv
+│   ├── Ice_cream_selling_data_test.csv
+│
+└── src/
+    ├── Main.java
+    └── LinearRegression.java
+```
 
 ---
 
-## Explicación general del código
+## 🚀 ¿Qué hace el proyecto?
 
-El modelo se compone de:
+### ✔ 1. Lee los CSV (train y test)
+El archivo CSV debe tener:
+- Varias columnas numéricas
+- La **última columna es la variable objetivo y**
 
-### 1. Atributos principales
-- `weights`: coeficientes del modelo.
-- `bias`: término independiente.
-- `means` y `stds`: valores para el escalamiento.
-- `learningRate` y `epochs`: hiperparámetros del entrenamiento.
+### ✔ 2. Escala los datos
+Se aplica estandarización:
 
-### 2. Métodos implementados
+```
+z = (x - mean) / std
+```
 
-#### Carga de CSV
-Se implementaron dos lectores:
-- `loadCSV_X`: lee matrices X.
-- `loadCSV_y`: lee vectores y.
+### ✔ 3. Entrena un modelo usando **gradiente descendente**
+La clase `LinearRegression` calcula:
+- Pesos (`weights`)
+- Bias (`bias`)
+- Actualización de gradientes durante `epochs` épocas
 
-#### Escalamiento de datos
-- `dataScaling`: calcula media y desviación estándar y transforma la matriz.
-- `applyScaling`: usa los valores ya calculados para escalar nuevos datos.
+### ✔ 4. Predice valores nuevos
+Usando la fórmula:
 
-#### Entrenamiento
-El método `fit()` implementa descenso del gradiente para minimizar el MSE.
+```
+y_hat = bias + Σ (wᵢ * xᵢ)
+```
 
-#### Predicción
-`predict()` aplica los pesos y el sesgo para generar estimaciones.
+### ✔ 5. Calcula el MSE
+Error cuadrático medio:
 
-#### Cálculo del error
-`score()` devuelve el error cuadrático medio sobre un conjunto de datos.
-
----
-
-## Resultados de prueba
-Los resultados mostrados al ejecutar el programa incluyen:
-- Pesos finales.
-- Sesgo final.
-- Predicciones sobre el conjunto de prueba.
-- Error MSE.
+```
+MSE = (1/n) Σ (y_pred - y_real)²
+```
 
 ---
 
-## Problemas encontrados y soluciones
+## ▶️ ¿Cómo ejecutar?
 
-1. Escalamiento incorrecto de datos  
-   Solución: se aplicó normalización por media y desviación estándar.
+Dentro de la carpeta raíz:
 
-2. Desajuste dimensional al leer archivos  
-   Solución: se verificó número de columnas y filas antes de procesar.
+```
+javac src/*.java
+java src.Main
+```
 
-3. Baja velocidad de entrenamiento  
-   Solución: se agregó control de épocas y tasa de aprendizaje.
+O desde un IDE asegurando que el working directory sea:
+
+```
+Regresion-Lineal-Java/
+```
+
+---
+
+## 📊 Resultado esperado
+
+El programa imprime:
+- Todas las predicciones del modelo
+- El valor real del test
+- El MSE final
+
+Ejemplo:
+
+```
+Predicciones del modelo:
+0. Predicción = 31.92, Valor real = 30.1
+1. Predicción = 34.61, Valor real = 32.0
+...
+
+MSE = 4.82
+```
 
 ---
 
-## Conclusiones
+## 🧠 ¿Qué se evaluó?
 
-1. Es posible implementar un modelo de regresión lineal múltiple solo con Java y sin librerías externas.  
-2. El escalamiento de datos es fundamental para el buen desempeño del descenso del gradiente.  
-3. La estructura orientada a objetos permite extender y reutilizar fácilmente el modelo.
+- Lectura de CSV desde cero  
+- Implementación del gradiente descendente  
+- Escalado de datos  
+- Uso de clases y objetos  
+- Predicción y evaluación del modelo  
+- Estructura limpia del código  
 
 ---
+
+## ✔ Conclusión
+
+Este proyecto demuestra cómo implementar un modelo de regresión lineal múltiple desde cero, usando únicamente Java y aplicando conceptos de POO, matemáticas y procesamiento de datos.
+
